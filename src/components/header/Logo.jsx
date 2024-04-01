@@ -6,7 +6,7 @@ const Logo = () => {
 
   useEffect(() => {
     // Set timeout for 5 seconds
-    setTimeout(() => setIsAnimating(false), 4000);
+    setTimeout(() => setIsAnimating(false), 2000);
   }, []);
   return (
     <div className="col-span-4">
