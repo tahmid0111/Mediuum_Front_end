@@ -1,6 +1,6 @@
 import React from 'react'
 
-const RegistrationPage = () => {
+const VerifyOtpPage = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const RegistrationPage = () => {
   )
 }
 
-export default RegistrationPage
+export default VerifyOtpPage
