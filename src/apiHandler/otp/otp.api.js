@@ -8,5 +8,5 @@ export const SendEmail = async (email) => {
   let myBody = { Email: email };
 
   let result = await axios.post(url, myBody);
-  console.log(result);
+  return result.data;
 };

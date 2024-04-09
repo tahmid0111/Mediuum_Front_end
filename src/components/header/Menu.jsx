@@ -23,7 +23,7 @@ const Menu = () => {
           <li>
             <Link
               className="text-xl font-semibold mx-5 px-5 py-2 border-2 rounded-l-3xl rounded-r-3xl"
-              to="/register">
+              to="/sendEmail">
               Create Account
             </Link>
           </li>
