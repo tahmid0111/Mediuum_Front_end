@@ -5,9 +5,11 @@ import { SendEmail } from "../../apiHandler/otp/otp.api";
 
 import { FaEnvelope } from "react-icons/fa6";
 
+import Swal from "sweetalert2";
 import toast, { Toaster } from "react-hot-toast";
 import { Comment } from "react-loader-spinner";
 import { motion } from "framer-motion";
+import { setEmailHelper } from "../../helper/otp/otp.helper";
 
 const SendEmailRequest = () => {
   const navigate = useNavigate();
@@ -27,13 +29,20 @@ const SendEmailRequest = () => {
       setIsLoading(false);
       if (res.status === "fail" || res.status === "invalidEmail") {
         toast.error(res.message);
+      } else {
+        setEmailHelper(res.userEmail);
+        setTimeout(() => {
+          Swal.fire({
+            title: res.status,
+            text: res.message,
+            icon: res.status,
+            confirmButtonText: "Cool",
+          });
+        }, 1000);
+        setTimeout(() => {
+          navigate("/verifyOTP");
+        }, 2000);
       }
-      setTimeout(() => {
-        toast.success(res.message);
-      }, 1000);
-      setTimeout(() => {
-        navigate("/register");
-      }, 2000);
     } catch (error) {
       console.log(error);
     }
