@@ -1,5 +1,6 @@
 import React from 'react'
-import OTPVerify from '../../components/otp/OTPVerify'
+import OTPVerify from '../../components/otp/OTPVerify';
+
 
 const VerifyOtpPage = () => {
   return (

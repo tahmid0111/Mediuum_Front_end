@@ -18,8 +18,9 @@ const OTPVerify = () => {
 
   const SendOTP = async (value) => {
     setIsLoading(true);
-
+    console.log(value)
     let res = await VerifyOTP(value);
+    console.log(res);
     setIsLoading(false);
     if (res.status === "fail" || res.status === "wrongOTP") {
       setTimeout(() => {
@@ -30,12 +31,13 @@ const OTPVerify = () => {
         navigate("/sendEmail");
       }, 2000);
       setOtp("");
-    } else {
+    }
+    if (res.status === "success") {
       setTimeout(() => {
         toast.success(res.message);
       }, 1000);
       setTimeout(() => {
-        navigate("/");
+        navigate("/register");
       }, 2000);
     }
   };

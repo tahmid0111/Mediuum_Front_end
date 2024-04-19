@@ -1,6 +1,6 @@
 import AnimatedDiv from "../animation/AnimatedDiv";
-import Logo from "../header/Logo";
-import Menu from "../header/Menu";
+import Logo from "./header/Logo";
+import Menu from "./header/Menu";
 
 const Header = () => {
   return (

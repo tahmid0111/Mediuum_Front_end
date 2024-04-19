@@ -36,14 +36,14 @@ const Hero = () => {
         </motion.h1>
       </div>
       <div className="button-area col-span-12 text-center">
-        <Link to="/">
-          <button className="btn btn-primary btn-outline btn-wide  text-3xl font-bold">
+        <Link to="/" className="">
+          <button className="btn btn-primary btn-outline text-3xl font-bold px-10 pt-2 pb-12">
             Start reading
           </button>
         </Link>
         <Link to="/login">
           <button
-            className="btn btn-accent btn-outline mx-10 px-10  text-3xl font-bold"
+            className="btn btn-accent btn-outline mx-10 px-10 pt-2 pb-12 text-3xl font-bold"
             whileTap={{ scale: 0.5 }}>
             Start writing
           </button>

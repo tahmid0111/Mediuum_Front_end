@@ -1,10 +1,11 @@
 import React from 'react'
+import Login from '../../components/registration/Login'
 
 const LoginPage = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <Login />
+    </>
   )
 }
 

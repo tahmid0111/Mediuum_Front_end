@@ -30,7 +30,7 @@ const SendEmailRequest = () => {
       if (res.status === "fail" || res.status === "invalidEmail") {
         toast.error(res.message);
       } else {
-        setEmailHelper(res.userEmail);
+        setEmailHelper(res.data);
         setTimeout(() => {
           Swal.fire({
             title: res.status,
@@ -60,7 +60,9 @@ const SendEmailRequest = () => {
           color="#fff"
           backgroundColor="#F4442E"
         />
+        <p className="text-white text-xl">it can take a few seconds, please wait!</p>
       </div>
+      
     );
   } else {
     return (
