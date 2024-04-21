@@ -1,30 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
-import * as yup from "yup";
-import { LoginApi, Register } from "../../apiHandler/registration/registration.api";
+import { LoginApi } from "../../apiHandler/registration/registration.api";
+import toast, { Toaster } from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
+import { InfinitySpin } from "react-loader-spinner";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
       Email: "",
       Password: "",
     },
-    validationSchema: yup.object({
-      Email: yup
-        .string()
-        .email("please provide a valid email")
-        .required("this field can't be empty"),
-      Password: yup.string().required(),
-    }),
     onSubmit: async (values, { resetForm }) => {
-      let res = await LoginApi(values)
-      console.log(res)
-      
+      setIsLoading(true);
+      let res = await LoginApi(values);
+      setIsLoading(false);
       resetForm({ values: "" });
+      if (res.status === "success") {
+        setTimeout(() => {
+          toast.success(res.message);
+        }, 1000);
+        setTimeout(async () => {
+          navigate("/");
+        }, 2000);
+      } else if (res.status === "incorrectPassword") {
+        setTimeout(() => {
+          toast.error(res.message);
+        }, 1000);
+      }
     },
   });
+  if (isLoading) {
+    return (
+      <div className="h-screen bg-black flex justify-center items-center">
+        <InfinitySpin
+          visible={true}
+          width="200"
+          color="#4fa94d"
+          ariaLabel="infinity-spin-loading"
+        />
+      </div>
+    );
+  }
   return (
-    <div className="h-screen bg-gray-400 grid grid-cols-12 items-center">
+    <div className="h-screen bg-gray-900 grid grid-cols-12 items-center">
+      <Toaster />
       <div className="card col-span-12 w-5/12 h-[500px] mx-auto bg-white shadow-2xl shadow-blue-500/20">
         <div className="card-body">
           <h2 className="text-center text-4xl font-medium mb-4 ">Login</h2>
@@ -60,7 +82,11 @@ const Login = () => {
               />
             </div>
             <div className="">
-              <button type="submit" className="btn btn-success w-full text-white text-xl font-bold">Log In</button>
+              <button
+                type="submit"
+                className="btn btn-success w-full text-white text-xl font-bold">
+                Log In
+              </button>
             </div>
             {/* <div
               class="button w-40 float-right h-14 bg-blue-500 rounded-lg cursor-pointer select-none
@@ -74,10 +100,16 @@ const Login = () => {
               </span>
             </div> */}
           </form>
-          <div className="mt-4 text-center pt-10">
-            <a href="#" className="text-blue-600">
+          <div className="mt-4 text-center pt-5">
+            <Link className="text-blue-500 font-bold">
               Forget Password?
-            </a>
+            </Link>
+          </div>
+          <div className="mt-4 text-center">
+            <span>Didn't have an account? </span>
+            <Link to="/sendEmail/register" className="font-bold underline hover:text-blue-500">
+              create account
+            </Link>
           </div>
         </div>
       </div>

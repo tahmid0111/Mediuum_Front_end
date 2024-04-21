@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import OtpInput from "react-otp-input";
 
@@ -12,6 +12,7 @@ import { removeEmail } from "../../helper/otp/otp.helper";
 
 const OTPVerify = () => {
   const navigate = useNavigate();
+  const {task} = useParams();
 
   const [otp, setOtp] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +38,7 @@ const OTPVerify = () => {
         toast.success(res.message);
       }, 1000);
       setTimeout(() => {
-        navigate("/register");
+        navigate(`/${task}`);
       }, 2000);
     }
   };

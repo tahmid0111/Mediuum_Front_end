@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { SendEmail } from "../../apiHandler/otp/otp.api";
 
@@ -13,6 +13,7 @@ import { setEmailHelper } from "../../helper/otp/otp.helper";
 
 const SendEmailRequest = () => {
   const navigate = useNavigate();
+  const {task} = useParams();
 
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -40,7 +41,7 @@ const SendEmailRequest = () => {
           });
         }, 1000);
         setTimeout(() => {
-          navigate("/verifyOTP");
+          navigate(`/verifyOTP/${task}`);
         }, 2000);
       }
     } catch (error) {

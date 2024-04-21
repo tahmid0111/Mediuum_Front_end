@@ -17,8 +17,8 @@ const AppRouter = () => {
         <Route path="/register" element={<RegistrationPage />} />
         <Route path="/login" element={<LoginPage />} />
 
-        <Route path="/sendEmail" element={<SendEmailPage />} />
-        <Route path="/verifyOTP" element={<VerifyOtpPage />} />
+        <Route path="/sendEmail/:task" element={<SendEmailPage />} />
+        <Route path="/verifyOTP/:task" element={<VerifyOtpPage />} />
       </Routes>
     </>
   )

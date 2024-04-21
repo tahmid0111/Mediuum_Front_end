@@ -13,7 +13,6 @@ export const Register = async (values) => {
 
 export const LoginApi = async (values) => {
   let url = ApiURL(User_Base_URL, "login");
-
-  let result = await axios.post(url, values);
+  let result = await axios.post(url, values, { withCredentials: true });
   return result.data;
 };
