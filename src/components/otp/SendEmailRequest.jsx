@@ -77,20 +77,22 @@ const SendEmailRequest = () => {
           </div>
           <div className="col-span-12 py-5 2xl:py-20">
             <motion.p
-              className="text-2xl 2xl:text-4xl text-white font-bold px-5"
+              className="text-4xl 2xl:text-4xl text-white font-bold px-5"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 2 }}>
-              You will receive an one time OTP code via Email
+              Verify Email
             </motion.p>
           </div>
           <div className="col-span-12 mt-10">
             <form onSubmit={handleSubmit}>
               <div>
+                <br />
                 <input
-                  className="input input-bordered input-secondary w-72 md:w-96 2xl:w-[500px] bg-gray-500 text-2xl text-white my-10 py-7"
+                  className="input input-bordered input-secondary w-72 md:w-96 2xl:w-[500px] bg-gray-500 text-xl text-white my-10 py-7"
                   type="email"
                   name="email"
+                  placeholder="enter email"
                   value={email}
                   onChange={handleChange}
                 />

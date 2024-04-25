@@ -101,13 +101,17 @@ const Login = () => {
             </div> */}
           </form>
           <div className="mt-4 text-center pt-5">
-            <Link className="text-blue-500 font-bold">
+            <Link
+              to="/sendEmail/forgetPassword"
+              className="text-blue-500 font-bold">
               Forget Password?
             </Link>
           </div>
           <div className="mt-4 text-center">
             <span>Didn't have an account? </span>
-            <Link to="/sendEmail/register" className="font-bold underline hover:text-blue-500">
+            <Link
+              to="/sendEmail/register"
+              className="font-bold underline hover:text-blue-500">
               create account
             </Link>
           </div>

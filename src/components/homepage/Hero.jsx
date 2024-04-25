@@ -32,11 +32,11 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 4 }}>
-          Your Journey Begins Here
+          Where good ideas find you
         </motion.h1>
       </div>
       <div className="button-area col-span-12 text-center">
-        <Link to="/" className="">
+        <Link to="/blogs" className="">
           <button className="btn btn-primary btn-outline text-3xl font-bold px-10 pt-2 pb-12">
             Start reading
           </button>
