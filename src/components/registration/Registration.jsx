@@ -65,10 +65,11 @@ const Registration = () => {
       let myValues = {
         ...values,
         file: file,
-      }
-      console.log(myValues)
+      };
+      console.log(myValues);
       let res = await Register(myValues);
-      console.log(res.status)
+      setConfirmPassword("");
+      console.log(res.status);
       setIsLoading(false);
       resetForm({ values: "" });
       if (res.status === "success") {
@@ -76,7 +77,7 @@ const Registration = () => {
           toast.success(res.message);
         }, 1000);
         setTimeout(async () => {
-          // navigate("/");
+          navigate("/login");
         }, 2000);
       } else if (res.status === "incorrectPassword") {
         setTimeout(() => {

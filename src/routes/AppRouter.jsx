@@ -8,6 +8,7 @@ import VerifyOtpPage from './../pages/otp/VerifyOtpPage';
 import HomePage from '../pages/front/HomePage';
 import RegistrationPage from '../pages/registration/RegistrationPage';
 import LoginPage from '../pages/registration/LoginPage';
+import BlogPage from '../pages/front/BlogPage';
 
 const AppRouter = () => {
   return (
@@ -19,6 +20,8 @@ const AppRouter = () => {
 
         <Route path="/sendEmail/:task" element={<SendEmailPage />} />
         <Route path="/verifyOTP/:task" element={<VerifyOtpPage />} />
+
+        <Route path="/blogs" element={<BlogPage />} />
       </Routes>
     </>
   )

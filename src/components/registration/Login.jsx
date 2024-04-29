@@ -23,7 +23,7 @@ const Login = () => {
           toast.success(res.message);
         }, 1000);
         setTimeout(async () => {
-          navigate("/");
+          navigate("/blogs");
         }, 2000);
       } else if (res.status === "incorrectPassword") {
         setTimeout(() => {
