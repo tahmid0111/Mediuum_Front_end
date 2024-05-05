@@ -19,12 +19,8 @@ const Login = () => {
       setIsLoading(false);
       resetForm({ values: "" });
       if (res.status === "success") {
-        setTimeout(() => {
           toast.success(res.message);
-        }, 1000);
-        setTimeout(async () => {
-          navigate("/blogs");
-        }, 2000);
+          navigate("/blogPage");
       } else if (res.status === "incorrectPassword") {
         setTimeout(() => {
           toast.error(res.message);

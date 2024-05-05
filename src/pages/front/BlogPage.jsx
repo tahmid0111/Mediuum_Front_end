@@ -1,10 +1,11 @@
 import React from 'react'
+import BlogPageLayout from './../../layout/BlogPageLayout';
 
 const BlogPage = () => {
   return (
-    <div>
+    <BlogPageLayout>
       
-    </div>
+    </BlogPageLayout>
   )
 }
 

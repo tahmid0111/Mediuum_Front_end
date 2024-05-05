@@ -21,7 +21,7 @@ const AppRouter = () => {
         <Route path="/sendEmail/:task" element={<SendEmailPage />} />
         <Route path="/verifyOTP/:task" element={<VerifyOtpPage />} />
 
-        <Route path="/blogs" element={<BlogPage />} />
+        <Route path="/blogPage" element={<BlogPage />} />
       </Routes>
     </>
   )
