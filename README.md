@@ -6,24 +6,15 @@
   
 </div>
 
-# Getting Started
+# _Features_ ⬇️
 
-### If you want to contribute to this project, follow these steps:
+- ### The project follows a clear and organized folder structure to maintain code readability and scalability.
 
-## 1. Clone the Repository:
+- ### I am working with five user roles:
+- guest
+- reader
+- writer
+- manager
+- admin
 
-```bash
-git clone https://github.com/tahmid0111/Mediuum_Front_end.git
-```
-## 2. Install Dependencies:
-
-```bash
-cd Mediuum_Front_end
-npm install
-```
-
-## 5. Start the Server:
-
-```bash
-npm run dev
-```
+- ### I have focused on code quality, not quantity.
