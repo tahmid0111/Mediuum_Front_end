@@ -36,7 +36,7 @@ const Hero = () => {
         </motion.h1>
       </div>
       <div className="button-area col-span-12 text-center">
-        <Link to="/blogPage" className="">
+        <Link to="/login" className="">
           <button className="btn btn-primary btn-outline text-3xl font-bold px-10 pt-2 pb-12">
             Start reading
           </button>

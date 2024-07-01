@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaRegPenToSquare, FaBell } from "react-icons/fa6";
+import { FaRegPenToSquare, FaBell, FaBookBookmark  } from "react-icons/fa6";
 
 const BlogMenu = () => {
   return (
@@ -18,6 +18,13 @@ const BlogMenu = () => {
             <Link className="" to="/faq">
               <div className="tooltip" data-tip="notification">
                 <FaBell className="text-4xl text-white" />
+              </div>
+            </Link>
+          </li>
+          <li className="px-5">
+            <Link className="" to="/faq">
+              <div className="tooltip" data-tip="library">
+                <FaBookBookmark className="text-4xl text-white" />
               </div>
             </Link>
           </li>

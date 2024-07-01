@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TopicsByCategory = () => {
+const TopicsByCategory = ({categoryID}) => {
   return (
     <div>
       

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import * as yup from "yup";
 import { useFormik } from "formik";
-import { Register } from "../../apiHandler/registration/registration.api";
+import { Register } from "../../api/registration/registration.api";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { InfinitySpin } from "react-loader-spinner";
+import { getEmail } from "../../helper/otp/otp.helper";
 
 const jobs = [
   "Software Engineer",
@@ -23,6 +24,7 @@ const Registration = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState("");
   const [file, setFile] = useState("");
+  const email = getEmail();
   const handleConfirmPassword = (e) => {
     setConfirmPassword(e.target.value);
   };
@@ -33,7 +35,7 @@ const Registration = () => {
     initialValues: {
       FirstName: "",
       LastName: "",
-      Email: "",
+      Email: `${email}`,
       Password: "",
       Occupation: "Software Engineer",
       About: "",
@@ -76,7 +78,7 @@ const Registration = () => {
         setTimeout(() => {
           toast.success(res.message);
         }, 1000);
-        setTimeout(async () => {
+        setTimeout(() => {
           navigate("/login");
         }, 2000);
       } else if (res.status === "incorrectPassword") {
@@ -95,9 +97,9 @@ const Registration = () => {
       <span className="block text-red-500 pt-2">{formik.errors.LastName}</span>
     );
 
-  const renderEmailError = formik.touched.Email && formik.errors.Email && (
-    <span className="block text-red-500 pt-2">{formik.errors.Email}</span>
-  );
+  // const renderEmailError = formik.touched.Email && formik.errors.Email && (
+  //   <span className="block text-red-500 pt-2">{formik.errors.Email}</span>
+  // );
 
   const renderPasswordError = formik.touched.Password &&
     formik.errors.Password && (
@@ -161,7 +163,7 @@ const Registration = () => {
               />
               {renderLastNameError}
             </div>
-            <div className="col-span-12 mx-10 my-5">
+            {/* <div className="col-span-12 mx-10 my-5">
               <label htmlFor="Email">
                 <span className="block text-blue-500 pb-2">Your Email</span>
               </label>
@@ -175,7 +177,7 @@ const Registration = () => {
                 required
               />
               {renderEmailError}
-            </div>
+            </div> */}
             <div className="col-span-6 mx-10 my-5">
               <label htmlFor="file">
                 <span className="block text-blue-500 pb-2">

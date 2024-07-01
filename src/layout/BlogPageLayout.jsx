@@ -9,7 +9,6 @@ const BlogPageLayout = (props) => {
       <BlogHeader />
       <AllCategoryList />
       {props.children}
-      <Footer />
     </>
   );
 };

@@ -7,7 +7,7 @@ import { FaEnvelopeOpen } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import toast, { Toaster } from "react-hot-toast";
 import { Grid } from "react-loader-spinner";
-import { VerifyOTP } from "../../apiHandler/otp/otp.api";
+import { VerifyOTP } from "../../api/otp/otp.api";
 import { removeEmail } from "../../helper/otp/otp.helper";
 
 const OTPVerify = () => {

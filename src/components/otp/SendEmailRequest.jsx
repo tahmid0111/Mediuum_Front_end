@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { SendEmail } from "../../apiHandler/otp/otp.api";
+import { SendEmail } from "../../api/otp/otp.api";
 
 import { FaEnvelope } from "react-icons/fa6";
 

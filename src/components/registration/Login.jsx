@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
-import { LoginApi } from "../../apiHandler/registration/registration.api";
+import { LoginApi } from "../../api/registration/registration.api";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { InfinitySpin } from "react-loader-spinner";
@@ -20,7 +20,7 @@ const Login = () => {
       resetForm({ values: "" });
       if (res.status === "success") {
           toast.success(res.message);
-          navigate("/blogPage");
+          navigate("/blogByCategory/66268ee95324e120b3464e61");
       } else if (res.status === "incorrectPassword") {
         setTimeout(() => {
           toast.error(res.message);

@@ -1,6 +1,6 @@
 # Mediuum Front-end 😊
 
-### _by Tahmid Emam_ 🤖
+## _by Tahmid Emam_ 🤖
 
 # Getting Started
 
