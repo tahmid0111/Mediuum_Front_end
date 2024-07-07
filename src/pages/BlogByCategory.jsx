@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import BlogPageLayout from "../../layout/BlogPageLayout";
+import BlogPageLayout from "../layout/BlogPageLayout";
 import { useParams } from "react-router-dom";
-import Trending from "../../components/blogpage/Trending";
-import TopicsByCategory from "../../components/blogpage/TopicsByCategory";
-import TopWriters from "../../components/blogpage/TopWriters";
+import Trending from "../components/blogpage/Trending";
+import TopicsByCategory from "../components/blogpage/TopicsByCategory";
+import TopWriters from "../components/blogpage/TopWriters";
 
 const BlogByCategory = () => {
   const { categoryID } = useParams();

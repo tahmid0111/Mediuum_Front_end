@@ -4,6 +4,7 @@ import { LoginApi } from "../../api/registration/registration.api";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { InfinitySpin } from "react-loader-spinner";
+import { setEmailHelper } from "../../helper/otp/otp.helper";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -17,10 +18,12 @@ const Login = () => {
       setIsLoading(true);
       let res = await LoginApi(values);
       setIsLoading(false);
-      resetForm({ values: "" });
       if (res.status === "success") {
           toast.success(res.message);
           navigate("/blogByCategory/66268ee95324e120b3464e61");
+          console.log(values.Email)
+          setEmailHelper(values.Email);
+          resetForm({ values: "" });
       } else if (res.status === "incorrectPassword") {
         setTimeout(() => {
           toast.error(res.message);
