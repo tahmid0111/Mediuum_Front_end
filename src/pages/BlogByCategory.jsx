@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import BlogPageLayout from "../layout/BlogPageLayout";
 import { useParams } from "react-router-dom";
 import Trending from "../components/blogpage/Trending";
@@ -11,7 +11,7 @@ const BlogByCategory = () => {
   const getBlogByCategory = async () => {
     fetch(`http://localhost:8080/blog/api/v1/readBlogByCategory/${categoryID}`)
       .then((res) => res.json())
-      .then((data) => console.log(data.data));
+      .then((data) => setBlog(data.data));
   };
   useEffect(() => {
     getBlogByCategory();

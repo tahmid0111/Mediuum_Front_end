@@ -20,7 +20,7 @@ const AllCategoryList = () => {
       <div className="col-span-12 mx-auto">
         <ul className="flex">
           {category.map((item, i) => (
-            <li key={i} className="px-2 font-bold">
+            <li key={i} className="px-4 font-bold">
               <Link to={`/blogByCategory/${item._id}`}>
                 {item.CategoryName}
               </Link>
