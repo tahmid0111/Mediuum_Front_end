@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="grid grid-cols-12 px-20 py-10 bg-black h-screen">
+    <div className="grid grid-cols-12 px-20 py-10 bg-black">
       <div className="text-area col-span-12 text-center pt-20">
         <motion.span
           className="text-7xl font-bold text-green-500 px-3"
@@ -38,7 +38,7 @@ const Hero = () => {
           Where good ideas find you
         </motion.h1>
       </div>
-      <div className="button-area col-span-12 text-center">
+      <div className="button-area col-span-12 text-center mt-20 mb-10">
         <Link to="/blogByCategory/64f875ed502e1b80556da101" className="">
           <button className="btn btn-primary btn-outline text-3xl font-bold px-10 pt-2 pb-12">
             Start reading
