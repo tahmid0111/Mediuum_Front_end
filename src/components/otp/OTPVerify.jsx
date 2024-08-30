@@ -88,12 +88,12 @@ const OTPVerify = () => {
             value={otp}
             onChange={setOtp}
             numInputs={6}
-            renderSeparator={<span>-</span>}
+            renderSeparator={<span>- </span>}
             renderInput={(props) => (
               <input
                 {...props}
                 inputMode="numeric"
-                className="text-6xl ml-4 rounded-md"
+                className="text-3xl sm:text-6xl ml-4 rounded-md"
               />
             )}
           />

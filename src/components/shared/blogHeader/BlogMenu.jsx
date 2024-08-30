@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaRegPenToSquare, FaBell, FaBookBookmark  } from "react-icons/fa6";
+import { FaRegPenToSquare, FaBell, FaBookBookmark } from "react-icons/fa6";
 import { getEmail } from "../../../helper/otp/otp.helper";
 
 const BlogMenu = () => {
@@ -11,7 +11,7 @@ const BlogMenu = () => {
         <ul className="flex">
           <li className="px-5">
             <Link className="" to="/">
-              <div className="tooltip" data-tip="write new blog">
+              <div className="tooltip" data-tip="write blog">
                 <FaRegPenToSquare className="text-4xl text-white" />
               </div>
             </Link>
@@ -34,7 +34,7 @@ const BlogMenu = () => {
             <Link className="" to={`/profile/${email}`}>
               <div className="avatar">
                 <div className="w-10 mask mask-squircle">
-                  <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                  <img src="/public//medium-logo.png" />
                 </div>
               </div>
             </Link>

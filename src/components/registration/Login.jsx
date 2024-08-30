@@ -4,7 +4,7 @@ import { LoginApi } from "../../api/registration/registration.api";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { InfinitySpin } from "react-loader-spinner";
-import { setEmailHelper } from "../../helper/otp/otp.helper";
+import { setEmailHelper, setTokenHelper } from "../../helper/otp/otp.helper";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -19,11 +19,11 @@ const Login = () => {
       let res = await LoginApi(values);
       setIsLoading(false);
       if (res.status === "success") {
-          toast.success(res.message);
-          navigate("/blogByCategory/66268ee95324e120b3464e61");
-          console.log(values.Email)
-          setEmailHelper(values.Email);
-          resetForm({ values: "" });
+        toast.success(res.message);
+        navigate("/blogByCategory/64f875ed502e1b80556da101");
+        setTokenHelper(res.data);
+        setEmailHelper(values.Email);
+        resetForm({ values: "" });
       } else if (res.status === "incorrectPassword") {
         setTimeout(() => {
           toast.error(res.message);
@@ -46,7 +46,7 @@ const Login = () => {
   return (
     <div className="h-screen bg-gray-900 grid grid-cols-12 items-center">
       <Toaster />
-      <div className="card col-span-12 w-5/12 h-[500px] mx-auto bg-white shadow-2xl shadow-blue-500/20">
+      <div className="card col-span-12 md:w-7/12 lg:w-5/12 2xl:w-6/12 h-[500px] mx-auto bg-white shadow-2xl shadow-blue-500/20">
         <div className="card-body">
           <h2 className="text-center text-4xl font-medium mb-4 ">Login</h2>
           <form onSubmit={formik.handleSubmit}>
@@ -83,7 +83,8 @@ const Login = () => {
             <div className="">
               <button
                 type="submit"
-                className="btn btn-success w-full text-white text-xl font-bold">
+                className="btn btn-warning w-full text-xl font-bold"
+              >
                 Log In
               </button>
             </div>
@@ -102,7 +103,8 @@ const Login = () => {
           <div className="mt-4 text-center pt-5">
             <Link
               to="/sendEmail/forgetPassword"
-              className="text-blue-500 font-bold">
+              className="text-blue-500 font-bold"
+            >
               Forget Password?
             </Link>
           </div>
@@ -110,7 +112,8 @@ const Login = () => {
             <span>Didn't have an account? </span>
             <Link
               to="/sendEmail/register"
-              className="font-bold underline hover:text-blue-500">
+              className="font-bold underline hover:text-blue-500"
+            >
               create account
             </Link>
           </div>

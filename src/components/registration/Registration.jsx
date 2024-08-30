@@ -125,7 +125,7 @@ const Registration = () => {
   return (
     <div className="bg-black px-10 py-10">
       <Toaster />
-      <div className="border border-blue-500 rounded-2xl px-24 py-10">
+      <div className="border border-blue-500 rounded-2xl px-5 lg:px-10 xl:px-24 py-10">
         <form onSubmit={formik.handleSubmit}>
           <div className="grid grid-cols-12">
             <div className="col-span-12">
@@ -133,7 +133,7 @@ const Registration = () => {
                 Registration
               </h1>
             </div>
-            <div className="col-span-6 mx-10 my-5">
+            <div className="col-span-12 md:col-span-6 md:mx-2 lg:mx-4 xl:mx-10 my-5">
               <label htmlFor="FirstName">
                 <span className="block text-blue-500 pb-2">First Name</span>
               </label>
@@ -148,7 +148,7 @@ const Registration = () => {
               />
               {renderFirstNameError}
             </div>
-            <div className="col-span-6 mx-10 my-5">
+            <div className="col-span-12 md:col-span-6 md:mx-2 lg:mx-4 xl:mx-10 my-5">
               <label htmlFor="LastName">
                 <span className="block text-blue-500 pb-2">Last Name</span>
               </label>
@@ -178,7 +178,7 @@ const Registration = () => {
               />
               {renderEmailError}
             </div> */}
-            <div className="col-span-6 mx-10 my-5">
+            <div className="col-span-12 md:col-span-6 md:mx-2 lg:mx-4 xl:mx-10 my-5">
               <label htmlFor="file">
                 <span className="block text-blue-500 pb-2">
                   Profile Picture
@@ -193,7 +193,7 @@ const Registration = () => {
                 required
               />
             </div>
-            <div className="col-span-6 mx-10 my-5">
+            <div className="col-span-12 md:col-span-6 md:mx-2 lg:mx-4 xl:mx-10 my-5">
               <label htmlFor="Occupation">
                 <span className="block text-blue-500 pb-2">Occupation</span>
               </label>
@@ -209,7 +209,7 @@ const Registration = () => {
                 ))}
               </select>
             </div>
-            <div className="col-span-12 mx-10 my-5">
+            <div className="col-span-12 lg:mx-4 xl:mx-10 my-5">
               <label htmlFor="About">
                 <span className="block text-blue-500 pb-2">
                   Write about yourself
@@ -224,7 +224,7 @@ const Registration = () => {
                 rows="5"></textarea>
               {renderAboutError}
             </div>
-            <div className="col-span-6 mx-10 my-5">
+            <div className="col-span-12 md:col-span-6 md:mx-2 lg:mx-2 xl:mx-10 my-5">
               <label htmlFor="Password">
                 <span className="block text-blue-500 pb-2">Password</span>
               </label>
@@ -242,7 +242,7 @@ const Registration = () => {
                 digit and one special character
               </span>
             </div>
-            <div className="col-span-6 mx-10 my-5">
+            <div className="col-span-12 md:col-span-6 md:mx-2 lg:mx-2 xl:mx-10 my-5">
               <label htmlFor="password2">
                 <span className="block text-blue-500 pb-2">
                   Confirm Password
@@ -260,7 +260,7 @@ const Registration = () => {
             <div className="col-span-12 mx-auto my-10">
               <button
                 type="submit"
-                className="btn btn-lg btn-secondary px-48 text-2xl">
+                className="btn btn-lg btn-secondary px-10 sm:px-[100px] md:px-48 2xl:px-80 text-2xl">
                 Create Account
               </button>
             </div>
