@@ -5,32 +5,48 @@ import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { InfinitySpin } from "react-loader-spinner";
 import { setEmailHelper, setTokenHelper } from "../../helper/otp/otp.helper";
+import { getData } from "../../api/common/getData";
+// redux
+import { useDispatch } from "react-redux";
+import { addData } from "../../redux/slice/profile/profileSlice";
 
 const Login = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
+
+  const dispatch = useDispatch();
+  const fetchData = async () => {
+    let res = await getData(`http://localhost:8080/user/api/v1/readUserProfile`);
+    dispatch(addData(res.data))
+  }
+
   const formik = useFormik({
     initialValues: {
       Email: "",
       Password: "",
     },
+
     onSubmit: async (values, { resetForm }) => {
       setIsLoading(true);
       let res = await LoginApi(values);
-      setIsLoading(false);
+
       if (res.status === "success") {
-        toast.success(res.message);
-        navigate("/blogByCategory/64f875ed502e1b80556da101");
         setTokenHelper(res.data);
         setEmailHelper(values.Email);
         resetForm({ values: "" });
+        fetchData()
+        navigate("/blogByCategory/64f875ed502e1b80556da101");
+        setIsLoading(false);
+
       } else if (res.status === "incorrectPassword") {
+        setIsLoading(false);
         setTimeout(() => {
           toast.error(res.message);
         }, 1000);
       }
     },
   });
+
   if (isLoading) {
     return (
       <div className="h-screen bg-black flex justify-center items-center">

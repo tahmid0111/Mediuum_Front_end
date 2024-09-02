@@ -1,9 +1,9 @@
+import AllBlogs from "../../components/blogpage/blogs/AllBlogs";
+import TopicsByCategory from "../../components/blogpage/topics/TopicsByCategory";
+import TopWriters from "../../components/blogpage/topWriter/TopWriters";
+import Trending from "../../components/blogpage/trending/Trending";
 import BlogPageLayout from "../../layout/BlogPageLayout";
 import { useParams } from "react-router-dom";
-import Trending from "../../components/blogpage/Trending";
-import TopicsByCategory from "../../components/blogpage/TopicsByCategory";
-import TopWriters from "../../components/blogpage/TopWriters";
-import AllBlogs from "../../components/blogpage/AllBlogs";
 
 const BlogByCategory = () => {
   const { categoryID } = useParams();

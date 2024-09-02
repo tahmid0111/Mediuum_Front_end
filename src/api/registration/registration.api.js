@@ -1,5 +1,6 @@
 import axios from "axios";
 import { ApiURL } from "../../helper/URL/URLHelper";
+import { getToken } from "../../helper/otp/otp.helper";
 
 const User_Base_URL = "http://localhost:8080/user/api/v1";
 const Writer_Base_URL = "http://localhost:8080/writer/api/v1";
@@ -20,7 +21,7 @@ export const Register = async (values) => {
       "Content-Type": "multipart/form-data",
     },
   });
-  console.log(result)
+  console.log(result);
   return result.data;
 };
 
@@ -28,4 +29,13 @@ export const LoginApi = async (values) => {
   let url = ApiURL(User_Base_URL, "login");
   let result = await axios.post(url, values, { withCredentials: true });
   return result.data;
+};
+
+export const LogoutApi = async () => {
+  let url = ApiURL(User_Base_URL, "logout");
+  console.log(getToken())
+  let res = await axios.post(url, { withCredentials: true });
+  console.log(getToken())
+  console.log(res.data);
+  return res.data;
 };

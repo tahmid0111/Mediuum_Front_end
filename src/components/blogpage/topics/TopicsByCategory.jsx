@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getData } from "../../api/common/getData";
+import { getData } from "../../../api/common/getData";
 
 const TopicsByCategory = ({ categoryID }) => {
   const [items, setItems] = useState([]);

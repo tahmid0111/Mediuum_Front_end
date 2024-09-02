@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../header/Logo'
+import Logo from '../../header/Logo'
 import BlogMenu from './BlogMenu'
 
 const BlogHeader = () => {

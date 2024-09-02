@@ -53,7 +53,7 @@ const Faq = () => {
         <div className="collapse collapse-arrow bg-base-200 mb-5">
           <input type="radio" name="my-accordion-2" />
           <div className="collapse-title text-xl font-medium bg-orange-300">
-            Can I earn money from writing{" "}
+            Can I earn money from writing?
           </div>
           <div className="collapse-content bg-gray-100">
             <p>

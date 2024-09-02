@@ -8,7 +8,7 @@ const Trending = () => {
         Trending Blogs
       </h1>
       <div className="grid grid-cols-12">
-        <div className="col-span-12 md:col-span-6 lg:col-span-4 p-5 bg-gray-100 rounded-lg mx-4 my-10">
+        <div className="col-span-12 md:col-span-6 lg:col-span-4 bg-gray-700 text-gray-200 rounded-lg mx-4 my-10">
           <Link>
             <div className="single-blog">
               <img
@@ -16,17 +16,19 @@ const Trending = () => {
                 alt=""
                 className="w-full"
               />
-              <p className="font-bold my-3">
-                written by <span className="text-blue-500">mr. John Doe</span>
-              </p>
-              <h1 className="text-xl font-bold">
-                AI Engineer Career Roadmap: A Comprehensive Guide to Becoming an
-                AI Expert
-              </h1>
+              <div className="blog-content p-5">
+                <p className="font-bold">
+                  written by <span className="text-blue-500">mr. John Doe</span>
+                </p>
+                <h1 className="text-xl font-bold pt-2">
+                  AI Engineer Career Roadmap: A Comprehensive Guide to Becoming
+                  an AI Expert
+                </h1>
+              </div>
             </div>
           </Link>
         </div>
-        <div className="col-span-12 md:col-span-6 lg:col-span-4 p-5 bg-gray-100 rounded-lg mx-4 my-10">
+        <div className="col-span-12 md:col-span-6 lg:col-span-4 bg-gray-700 text-gray-200 rounded-lg mx-4 my-10">
           <Link>
             <div className="single-blog">
               <img
@@ -34,17 +36,19 @@ const Trending = () => {
                 alt=""
                 className="w-full"
               />
-              <p className="font-bold my-3">
-                written by <span className="text-blue-500">mr. John Doe</span>
-              </p>
-              <h1 className="text-xl font-bold">
-                AI Engineer Career Roadmap: A Comprehensive Guide to Becoming an
-                AI Expert
-              </h1>
+              <div className="blog-content p-5">
+                <p className="font-bold">
+                  written by <span className="text-blue-500">mr. John Doe</span>
+                </p>
+                <h1 className="text-xl font-bold pt-2">
+                  AI Engineer Career Roadmap: A Comprehensive Guide to Becoming
+                  an AI Expert
+                </h1>
+              </div>
             </div>
           </Link>
         </div>
-        <div className="col-span-12 md:col-span-6 lg:col-span-4 p-5 bg-gray-100 rounded-lg mx-4 my-10">
+        <div className="col-span-12 md:col-span-6 lg:col-span-4 bg-gray-700 text-gray-200 rounded-lg mx-4 my-10">
           <Link>
             <div className="single-blog">
               <img
@@ -52,17 +56,19 @@ const Trending = () => {
                 alt=""
                 className="w-full"
               />
-              <p className="font-bold my-3">
-                written by <span className="text-blue-500">mr. John Doe</span>
-              </p>
-              <h1 className="text-xl font-bold">
-                AI Engineer Career Roadmap: A Comprehensive Guide to Becoming an
-                AI Expert
-              </h1>
+              <div className="blog-content p-5">
+                <p className="font-bold">
+                  written by <span className="text-blue-500">mr. John Doe</span>
+                </p>
+                <h1 className="text-xl font-bold pt-2">
+                  AI Engineer Career Roadmap: A Comprehensive Guide to Becoming
+                  an AI Expert
+                </h1>
+              </div>
             </div>
           </Link>
         </div>
-        <div className="col-span-12 md:col-span-6 lg:col-span-4 p-5 bg-gray-100 rounded-lg mx-4 my-10">
+        <div className="col-span-12 md:col-span-6 lg:col-span-4 bg-gray-700 text-gray-200 rounded-lg mx-4 my-10">
           <Link>
             <div className="single-blog">
               <img
@@ -70,17 +76,19 @@ const Trending = () => {
                 alt=""
                 className="w-full"
               />
-              <p className="font-bold my-3">
-                written by <span className="text-blue-500">mr. John Doe</span>
-              </p>
-              <h1 className="text-xl font-bold">
-                AI Engineer Career Roadmap: A Comprehensive Guide to Becoming an
-                AI Expert
-              </h1>
+              <div className="blog-content p-5">
+                <p className="font-bold">
+                  written by <span className="text-blue-500">mr. John Doe</span>
+                </p>
+                <h1 className="text-xl font-bold pt-2">
+                  AI Engineer Career Roadmap: A Comprehensive Guide to Becoming
+                  an AI Expert
+                </h1>
+              </div>
             </div>
           </Link>
         </div>
-        <div className="col-span-12 md:col-span-6 lg:col-span-4 p-5 bg-gray-100 rounded-lg mx-4 my-10">
+        <div className="col-span-12 md:col-span-6 lg:col-span-4 bg-gray-700 text-gray-200 rounded-lg mx-4 my-10">
           <Link>
             <div className="single-blog">
               <img
@@ -88,17 +96,19 @@ const Trending = () => {
                 alt=""
                 className="w-full"
               />
-              <p className="font-bold my-3">
-                written by <span className="text-blue-500">mr. John Doe</span>
-              </p>
-              <h1 className="text-xl font-bold">
-                AI Engineer Career Roadmap: A Comprehensive Guide to Becoming an
-                AI Expert
-              </h1>
+              <div className="blog-content p-5">
+                <p className="font-bold">
+                  written by <span className="text-blue-500">mr. John Doe</span>
+                </p>
+                <h1 className="text-xl font-bold pt-2">
+                  AI Engineer Career Roadmap: A Comprehensive Guide to Becoming
+                  an AI Expert
+                </h1>
+              </div>
             </div>
           </Link>
         </div>
-        <div className="col-span-12 md:col-span-6 lg:col-span-4 p-5 bg-gray-100 rounded-lg mx-4 my-10">
+        <div className="col-span-12 md:col-span-6 lg:col-span-4 bg-gray-700 text-gray-200 rounded-lg mx-4 my-10">
           <Link>
             <div className="single-blog">
               <img
@@ -106,13 +116,15 @@ const Trending = () => {
                 alt=""
                 className="w-full"
               />
-              <p className="font-bold my-3">
-                written by <span className="text-blue-500">mr. John Doe</span>
-              </p>
-              <h1 className="text-xl font-bold">
-                AI Engineer Career Roadmap: A Comprehensive Guide to Becoming an
-                AI Expert
-              </h1>
+              <div className="blog-content p-5">
+                <p className="font-bold">
+                  written by <span className="text-blue-500">mr. John Doe</span>
+                </p>
+                <h1 className="text-xl font-bold pt-2">
+                  AI Engineer Career Roadmap: A Comprehensive Guide to Becoming
+                  an AI Expert
+                </h1>
+              </div>
             </div>
           </Link>
         </div>

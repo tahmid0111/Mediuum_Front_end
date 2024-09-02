@@ -15,17 +15,18 @@ const AppRouter = () => {
   return (
     <>
       <Routes>
+        // Home Page==============
         <Route path="/" element={<HomePage />} />
         <Route path="/guide" element={<Guide />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/register" element={<RegistrationPage />} />
         <Route path="/login" element={<LoginPage />} />
-
+        // Email verification=====
         <Route path="/sendEmail/:task" element={<SendEmailPage />} />
         <Route path="/verifyOTP/:task" element={<VerifyOtpPage />} />
-
-        <Route path="/profile/:email" element={<ProfilePage />} />
-
+        // Profile Page===========
+        <Route path="/profile" element={<ProfilePage />} />
+        // Blog Page==============
         <Route
           path="/blogByCategory/:categoryID"
           element={<BlogByCategory />}

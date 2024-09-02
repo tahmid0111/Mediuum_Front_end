@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getData } from "../../api/common/getData";
+import { getData } from "../../../../api/common/getData";
 
 const AllCategoryList = () => {
   const [items, setItems] = useState([]);
@@ -9,6 +9,7 @@ const AllCategoryList = () => {
     let res = await getData(
       "http://localhost:8080/blog/api/v1/readAllCategory"
     );
+    console.log(res.data)
     setItems(res.data);
   };
 

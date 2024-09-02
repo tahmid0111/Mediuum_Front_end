@@ -8,11 +8,11 @@ const SingleTrending = () => {
       </h1>
       <div className="writer-area col-span-12 flex my-1">
         <div className="avatar">
-          <div className="w-5 h-5 rounded-full mr-2">
+          <div className="w-4 h-4 rounded-full mr-2">
             <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
           </div>
         </div>
-        <span>john doe</span>
+        <span className="text-sm">john doe</span>
       </div>
     </>
   );

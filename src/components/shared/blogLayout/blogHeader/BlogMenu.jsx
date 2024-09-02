@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaRegPenToSquare, FaBell, FaBookBookmark } from "react-icons/fa6";
-import { getEmail } from "../../../helper/otp/otp.helper";
+import { useSelector } from "react-redux";
+import { getData } from "../../../../api/common/getData";
 
 const BlogMenu = () => {
-  const email = getEmail();
+  // const userData = useSelector((state) => state.profile.value);
+  // console.log(userData);
+  const [data, setData] = useState("");
+  const fetchData = async () => {
+    let res = await getData(
+      `http://localhost:8080/user/api/v1/readUserProfile`
+    );
+    setData(res.data.Image);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <div className="col-span-8">
       <div className="menu-area mt-4 float-right">
@@ -31,10 +43,10 @@ const BlogMenu = () => {
             </Link>
           </li>
           <li className="px-5">
-            <Link className="" to={`/profile/${email}`}>
+            <Link className="" to={`/profile`}>
               <div className="avatar">
                 <div className="w-10 mask mask-squircle">
-                  <img src="/public//medium-logo.png" />
+                  {data !== "" ? <img src={data} /> : <h1>hi</h1>}
                 </div>
               </div>
             </Link>
