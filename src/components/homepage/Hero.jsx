@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { getEmail } from "../../helper/otp/otp.helper";
 
 const Hero = () => {
   return (
@@ -39,17 +40,19 @@ const Hero = () => {
         </motion.h1>
       </div>
       <div className="button-area col-span-12 text-center mt-5 md:mt-10 xl:mt-20 mb-10">
-        <Link to="/login" className="">
-          <button 
-          className="btn btn-primary btn-outline text-sm md:text-lg lg:text-2xl xl:text-3xl font-bold px-5 md:px-10 md:pt-2 md:pb-3 lg:pb-12"
-          >
+        <Link
+          to={
+            getEmail() ? `/blogByCategory/64f875ed502e1b80556da101` : "/login"
+          }
+        >
+          <button className="btn btn-primary btn-outline text-sm md:text-lg lg:text-2xl xl:text-3xl font-bold px-5 md:px-10 md:pt-2 md:pb-3 lg:pb-12">
             Start reading
           </button>
         </Link>
-        <Link to="/login">
-          <button 
-          className="btn btn-accent btn-outline mx-4 sm:mx-10 px-5 md:px-10 md:pt-2 md:pb-3 lg:pb-12 text-sm md:text-lg lg:text-2xl xl:text-3xl font-bold"
-          >
+        <Link
+          to={getEmail() ? `/profile` : "/login"}
+        >
+          <button className="btn btn-accent btn-outline mx-4 sm:mx-10 px-5 md:px-10 md:pt-2 md:pb-3 lg:pb-12 text-sm md:text-lg lg:text-2xl xl:text-3xl font-bold">
             Start writing
           </button>
         </Link>

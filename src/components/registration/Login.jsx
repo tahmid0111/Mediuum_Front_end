@@ -31,7 +31,6 @@ const Login = () => {
       let res = await LoginApi(values);
 
       if (res.status === "success") {
-        setTokenHelper(res.data);
         setEmailHelper(values.Email);
         resetForm({ values: "" });
         fetchData()

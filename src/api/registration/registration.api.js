@@ -33,9 +33,6 @@ export const LoginApi = async (values) => {
 
 export const LogoutApi = async () => {
   let url = ApiURL(User_Base_URL, "logout");
-  console.log(getToken())
-  let res = await axios.post(url, { withCredentials: true });
-  console.log(getToken())
-  console.log(res.data);
-  return res.data;
+  let result = await axios.post(url, "", { withCredentials: true });
+  return result.data;
 };

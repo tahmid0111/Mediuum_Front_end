@@ -6,3 +6,10 @@ export const getData = async (url) => {
   });
   return res.data;
 };
+
+// export const sendParam = async (url, param = "") => {
+//   let res = await axios.post(url, param, {
+//     withCredentials: true,
+//   });
+//   return res.data;
+// };

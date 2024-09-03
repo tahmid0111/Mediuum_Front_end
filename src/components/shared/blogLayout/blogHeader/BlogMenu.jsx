@@ -36,7 +36,7 @@ const BlogMenu = () => {
             </Link>
           </li>
           <li className="px-5">
-            <Link className="" to="/faq">
+            <Link className="" to="/library">
               <div className="tooltip" data-tip="library">
                 <FaBookBookmark className="text-4xl text-white" />
               </div>

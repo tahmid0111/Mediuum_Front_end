@@ -21,7 +21,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [items]);
 
   return (
     <ProfilePageLayout>

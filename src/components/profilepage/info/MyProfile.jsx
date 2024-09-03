@@ -1,12 +1,19 @@
 import React from "react";
+import { BsPencilFill } from "react-icons/bs";
 
 const MyProfile = (props) => {
   const { FirstName, LastName, Email, Occupation, About } = props.items;
   return (
     <div>
-      <h1 className="text-4xl font-bold pb-2">
-        {FirstName} {LastName}
-      </h1>
+      <div className="flex">
+        <h1 className="text-4xl font-bold pb-2">
+          {FirstName} {LastName}
+        </h1>
+        <button className="ml-auto mr-10 btn bg-transparent">
+          <BsPencilFill className="text-lg" />
+        </button>
+      </div>
+
       <p className="text-lg pb-2 border-b-2 border-blue-400">
         Software Engineer | Working on Javascript and React
       </p>
@@ -20,8 +27,11 @@ const MyProfile = (props) => {
           <span>{Occupation}</span>
         </div>
         <div className="pt-10">
-            <h3 className="text-xl font-bold">About Me</h3>
-            <p className="text-lg">{About}</p>
+          <h3 className="text-xl font-bold">About Me</h3>
+          <p className="text-lg">{About}</p>
+          <button className="float-right btn bg-blue-400 btn-info text-lg">
+            Edit Bio
+          </button>
         </div>
       </div>
     </div>
