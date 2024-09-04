@@ -2,23 +2,23 @@ import React, { useState } from "react";
 import AvatarBtn from "../profilepage/menu/AvatarBtn";
 
 const WriterMenu = (props) => {
-    const [color, setColor] = useState("writerProfile");
+  const [color, setColor] = useState("writerProfile");
 
-    const { Image } = props.items;
-    const { onComponentShow } = props;
+  const { Image } = props.items;
+  const { onComponentShow } = props;
 
-    const handleClick = (componentName) => {
-        setColor(componentName);
-        onComponentShow(componentName);
-      };
+  const handleClick = (componentName) => {
+    setColor(componentName);
+    onComponentShow(componentName);
+  };
 
-      let myData = {
-        linkData: "/profile",
-        titleData: "My Profile"
-      }
+  let myData = {
+    linkData: "/profile",
+    titleData: "My Profile",
+  };
   return (
     <>
-    <AvatarBtn image={Image} myData={myData} />
+      <AvatarBtn image={Image} myData={myData} />
       <div>
         <button
           className={`${

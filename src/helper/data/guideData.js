@@ -62,3 +62,18 @@ export const headingContent = {
   title: "Welcome to Mediuum! A Beginner’s Guide to Getting Started",
   desc: "This is the place where you can share your stories, discover new            ideas, and connect with a community of readers and writers. This guide will walk you through the essential steps to get started and make the most out of your experience on our platform.",
 };
+
+export const faqData = {
+  question1: "What should I do if I forget my password?",
+  question2: "Can I earn money from writing?",
+  question3: "What are the guidelines for posting content?",
+  question4: "How can I start writing blogs?",
+  answer1:
+    "If you forget your password, click on the 'Forgot Password?'' link on the login page. Enter the email address associated with your account, and we’ll send you instructions on how to reset your password. If you don’t receive the email, please check your spam folder or contact our support team for assistance.",
+  answer2:
+    "To start writing on Mediuum, simply sign up for an account and navigate to the 'Writer' section. From there, you can draft your article, add images, format your text, and when ready, publish it for others to read and interact with.",
+  answer3:
+    "We encourage creativity and freedom of expression but also has community guidelines to ensure a respectful environment. All content should adhere to our policies against hate speech, harassment, plagiarism, and inappropriate material. We encourage positive, constructive interactions and value original content.",
+  answer4:
+    "Yes, Mediuum offers opportunities for writers to earn money through its monetization programs, such as partner programs or ad revenue sharing. Writers can apply to become part of these programs based on their engagement metrics and content quality.",
+};

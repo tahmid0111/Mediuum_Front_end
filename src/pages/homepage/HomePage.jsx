@@ -1,16 +1,14 @@
-import Hero from "../../components/homepage/Hero"
-import Trending from "../../components/homepage/Trending"
-import Header from "../../components/shared/header/Header"
-
+import Hero from "../../components/homepage/hero/Hero";
+import Trending from "../../components/homepage/trending/Trending";
+import HomePageLayout from "../../layout/HomePageLayout";
 
 const HomePage = () => {
   return (
-    <div>
-      <Header />
+    <HomePageLayout>
       <Hero />
       <Trending />
-    </div>
-  )
-}
+    </HomePageLayout>
+  );
+};
 
-export default HomePage
+export default HomePage;

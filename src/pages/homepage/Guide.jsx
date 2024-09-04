@@ -1,11 +1,10 @@
 import React from "react";
-import Header from "../../components/shared/header/Header";
 import { guideData, headingContent } from "../../helper/data/guideData";
+import HomePageLayout from "../../layout/HomePageLayout";
 
 const Guide = () => {
   return (
-    <>
-      <Header />
+    <HomePageLayout>
       <div className="m-20">
         <div className="header-content mb-10">
           <h1 className="text-4xl font-bold text-blue-500 mb-5">{headingContent.title}</h1>
@@ -25,7 +24,7 @@ const Guide = () => {
           ))}
         </div>
       </div>
-    </>
+    </HomePageLayout>
   );
 };
 
