@@ -61,13 +61,13 @@ const Login = () => {
   return (
     <div className="h-screen bg-gray-900 grid grid-cols-12 items-center">
       <Toaster />
-      <div className="card col-span-12 md:w-7/12 lg:w-5/12 2xl:w-6/12 h-[500px] mx-auto bg-white shadow-2xl shadow-blue-500/20">
-        <div className="card-body">
-          <h2 className="text-center text-4xl font-medium mb-4 ">Login</h2>
+      <div className="card col-span-12 xs:mx-2 xxs:mx-5 xxm:mx-auto xxm:w-2/3 sm:w-[450px] md:w-[500px] 2xl:w-6/12 xxm:h-[450px] sm:h-[500px] mx-auto bg-white shadow-2xl shadow-blue-500/20">
+        <div className="card-body xs:px-3 xxm:px-5 sm:p-8">
+          <h2 className="text-center text-2xl sm:text-4xl font-medium xs:mb-2 sm:mb-4">Login</h2>
           <form onSubmit={formik.handleSubmit}>
-            <div className="form-control mb-4">
+            <div className="form-control xs:mb-2 sm:mb-4">
               <label className="label" htmlFor="username">
-                <span className="text-xl font-bold text-blue-500">Email</span>
+                <span className="text-base sm:text-xl font-bold text-blue-500">Email</span>
               </label>
               <input
                 type="email"
@@ -75,13 +75,13 @@ const Login = () => {
                 placeholder="enter email"
                 value={formik.values.Email}
                 onChange={formik.handleChange}
-                className="input input-bordered w-full text-xl shadow-lg"
+                className="input xs:input-sm xxs:input-md input-bordered w-full text-xl shadow-lg"
                 required
               />
             </div>
             <div className="form-control mb-4">
               <label className="label" htmlFor="password">
-                <span className="text-xl font-bold text-blue-500">
+                <span className="text-sm sm:text-xl font-bold text-blue-500">
                   Password
                 </span>
               </label>
@@ -91,14 +91,14 @@ const Login = () => {
                 placeholder="········"
                 value={formik.values.Password}
                 onChange={formik.handleChange}
-                className="input input-bordered w-full text-3xl shadow-lg"
+                className="input xs:input-sm xxs:input-md input-bordered w-full text-3xl shadow-lg"
                 required
               />
             </div>
             <div className="">
               <button
                 type="submit"
-                className="btn btn-warning w-full text-xl font-bold"
+                className="btn xs:btn-sm xxs:btn-md btn-warning w-full text-base sm:text-xl font-bold"
               >
                 Log In
               </button>
@@ -115,19 +115,19 @@ const Login = () => {
               </span>
             </div> */}
           </form>
-          <div className="mt-4 text-center pt-5">
+          <div className="mt-2 sm:mt-4 text-center pt-5">
             <Link
               to="/sendEmail/forgetPassword"
-              className="text-blue-500 font-bold"
+              className="text-blue-500 xs:text-sm font-bold"
             >
               Forget Password?
             </Link>
           </div>
-          <div className="mt-4 text-center">
+          <div className="mt-2 xs:text-sm xs:mt-2 sm:mt-4 text-center">
             <span>Didn't have an account? </span>
             <Link
               to="/sendEmail/register"
-              className="font-bold underline hover:text-blue-500"
+              className="font-bold xs:text-sm underline hover:text-blue-500"
             >
               create account
             </Link>

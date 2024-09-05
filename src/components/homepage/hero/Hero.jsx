@@ -4,7 +4,7 @@ import HeroTitle from "./HeroTitle";
 
 const Hero = () => {
   return (
-    <div className="grid grid-cols-12 md:px-20 py-10 bg-black">
+    <div className="grid grid-cols-12 md:px-5 lg:px-10 xl:px-20 py-10 bg-black">
       <div className="text-area col-span-12 text-center sm:pt-20">
         <HeroTitle />
       </div>

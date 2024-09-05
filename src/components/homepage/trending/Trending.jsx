@@ -1,133 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { getData } from "../../../api/common/getData";
+import { blogURL } from "../../../helper/URL/URLHelper";
+import SingleTrending from "./SingleTrending";
 
 const Trending = () => {
+  const [items, setItems] = useState([]);
+
+  const fetchData = async () => {
+    let url = `${blogURL}/readBlogByCategory/64f875ed502e1b80556da101`;
+    const res = await getData(url);
+    setItems(res.data);
+  };
+
+  useEffect(() => {
+    fetchData()
+  }, [items]);
   return (
-    <div className="bg-black px-10 pb-20">
-      <h1 className="text-5xl text-white font-bold text-center mb-20">
+    <div className="bg-black px-2 xxs:px-10 xxm:px-2 sm:px-5 pb-20">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl text-white font-bold text-center mb-10 md:mb-20">
         Trending Blogs
       </h1>
       <div className="grid grid-cols-12">
-        <div className="col-span-12 md:col-span-6 lg:col-span-4 bg-gray-700 text-gray-200 rounded-lg mx-4 my-10">
-          <Link>
-            <div className="single-blog">
-              <img
-                src="/public/ai-generated-8846756_1920.jpg"
-                alt=""
-                className="w-full"
-              />
-              <div className="blog-content p-5">
-                <p className="font-bold">
-                  written by <span className="text-blue-500">mr. John Doe</span>
-                </p>
-                <h1 className="text-xl font-bold pt-2">
-                  AI Engineer Career Roadmap: A Comprehensive Guide to Becoming
-                  an AI Expert
-                </h1>
-              </div>
-            </div>
-          </Link>
-        </div>
-        <div className="col-span-12 md:col-span-6 lg:col-span-4 bg-gray-700 text-gray-200 rounded-lg mx-4 my-10">
-          <Link>
-            <div className="single-blog">
-              <img
-                src="/public/ai-generated-8846756_1920.jpg"
-                alt=""
-                className="w-full"
-              />
-              <div className="blog-content p-5">
-                <p className="font-bold">
-                  written by <span className="text-blue-500">mr. John Doe</span>
-                </p>
-                <h1 className="text-xl font-bold pt-2">
-                  AI Engineer Career Roadmap: A Comprehensive Guide to Becoming
-                  an AI Expert
-                </h1>
-              </div>
-            </div>
-          </Link>
-        </div>
-        <div className="col-span-12 md:col-span-6 lg:col-span-4 bg-gray-700 text-gray-200 rounded-lg mx-4 my-10">
-          <Link>
-            <div className="single-blog">
-              <img
-                src="/public/ai-generated-8846756_1920.jpg"
-                alt=""
-                className="w-full"
-              />
-              <div className="blog-content p-5">
-                <p className="font-bold">
-                  written by <span className="text-blue-500">mr. John Doe</span>
-                </p>
-                <h1 className="text-xl font-bold pt-2">
-                  AI Engineer Career Roadmap: A Comprehensive Guide to Becoming
-                  an AI Expert
-                </h1>
-              </div>
-            </div>
-          </Link>
-        </div>
-        <div className="col-span-12 md:col-span-6 lg:col-span-4 bg-gray-700 text-gray-200 rounded-lg mx-4 my-10">
-          <Link>
-            <div className="single-blog">
-              <img
-                src="/public/ai-generated-8846756_1920.jpg"
-                alt=""
-                className="w-full"
-              />
-              <div className="blog-content p-5">
-                <p className="font-bold">
-                  written by <span className="text-blue-500">mr. John Doe</span>
-                </p>
-                <h1 className="text-xl font-bold pt-2">
-                  AI Engineer Career Roadmap: A Comprehensive Guide to Becoming
-                  an AI Expert
-                </h1>
-              </div>
-            </div>
-          </Link>
-        </div>
-        <div className="col-span-12 md:col-span-6 lg:col-span-4 bg-gray-700 text-gray-200 rounded-lg mx-4 my-10">
-          <Link>
-            <div className="single-blog">
-              <img
-                src="/public/ai-generated-8846756_1920.jpg"
-                alt=""
-                className="w-full"
-              />
-              <div className="blog-content p-5">
-                <p className="font-bold">
-                  written by <span className="text-blue-500">mr. John Doe</span>
-                </p>
-                <h1 className="text-xl font-bold pt-2">
-                  AI Engineer Career Roadmap: A Comprehensive Guide to Becoming
-                  an AI Expert
-                </h1>
-              </div>
-            </div>
-          </Link>
-        </div>
-        <div className="col-span-12 md:col-span-6 lg:col-span-4 bg-gray-700 text-gray-200 rounded-lg mx-4 my-10">
-          <Link>
-            <div className="single-blog">
-              <img
-                src="/public/ai-generated-8846756_1920.jpg"
-                alt=""
-                className="w-full"
-              />
-              <div className="blog-content p-5">
-                <p className="font-bold">
-                  written by <span className="text-blue-500">mr. John Doe</span>
-                </p>
-                <h1 className="text-xl font-bold pt-2">
-                  AI Engineer Career Roadmap: A Comprehensive Guide to Becoming
-                  an AI Expert
-                </h1>
-              </div>
-            </div>
-          </Link>
-        </div>
+        {items.slice(0, 6).map((item) => (
+          <SingleTrending key={item._id} item={item} />
+        ))}
       </div>
     </div>
   );

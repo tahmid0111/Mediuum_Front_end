@@ -45,7 +45,7 @@ const Drawer = () => {
             </li>
             <li className="sm:mr-20">
             <Link
-              className="text-lg bg-black text-white font-semibold pl-20 sm:pl-20 py-2 rounded-l-3xl rounded-r-3xl"
+              className="text-lg hover:bg-black bg-black text-white font-semibold pl-20 sm:pl-20 py-2 rounded-l-3xl rounded-r-3xl"
               to="/login"
             >
               Login
