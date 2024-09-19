@@ -33,22 +33,23 @@ const Registration = () => {
   };
   const formik = useFormik({
     initialValues: {
-      FirstName: "",
-      LastName: "",
-      Email: `${email}`,
+      FullName: "",
+      SubTitle: "",
+      // Email: `${email}`,
+      Email: `demo5@gmail.com`,
       Password: "",
       Occupation: "Software Engineer",
       About: "",
     },
+
     validationSchema: yup.object({
-      FirstName: yup
+      FullName: yup
         .string()
-        .min(3, "name must have at least 3 characters")
+        .min(8, "name must have at least 8 characters")
         .required(),
-      LastName: yup
+      SubTitle: yup
         .string()
-        .min(3, "name must have at least 3 characters")
-        .required(),
+        .max(100, "sub title can't have more than 100 characters"),
       Email: yup.string().email().required(),
       Password: yup
         .string()
@@ -57,8 +58,10 @@ const Registration = () => {
       About: yup
         .string()
         .min(15, "about must have at least 15 characters")
+        .max(500, "details can't have more than 500 characters")
         .required(),
     }),
+
     onSubmit: async (values, { resetForm }) => {
       if (values.Password !== confirmPassword) {
         return toast.error("Passwords do not match");
@@ -68,12 +71,12 @@ const Registration = () => {
         ...values,
         file: file,
       };
-      console.log(myValues);
+
       let res = await Register(myValues);
       setConfirmPassword("");
-      console.log(res.status);
       setIsLoading(false);
       resetForm({ values: "" });
+
       if (res.status === "success") {
         setTimeout(() => {
           toast.success(res.message);
@@ -88,19 +91,14 @@ const Registration = () => {
       }
     },
   });
-  const renderFirstNameError = formik.touched.FirstName &&
-    formik.errors.FirstName && (
-      <span className="block text-red-500 pt-2">{formik.errors.FirstName}</span>
+  const renderFullNameError = formik.touched.FullName &&
+    formik.errors.FullName && (
+      <span className="block text-red-500 pt-2">{formik.errors.FullName}</span>
     );
-  const renderLastNameError = formik.touched.LastName &&
-    formik.errors.LastName && (
-      <span className="block text-red-500 pt-2">{formik.errors.LastName}</span>
+  const renderSubTitleError = formik.touched.SubTitle &&
+    formik.errors.SubTitle && (
+      <span className="block text-red-500 pt-2">{formik.errors.SubTitle}</span>
     );
-
-  // const renderEmailError = formik.touched.Email && formik.errors.Email && (
-  //   <span className="block text-red-500 pt-2">{formik.errors.Email}</span>
-  // );
-
   const renderPasswordError = formik.touched.Password &&
     formik.errors.Password && (
       <span className="block text-red-500 pt-2">{formik.errors.Password}</span>
@@ -135,49 +133,34 @@ const Registration = () => {
             </div>
             <div className="col-span-12 md:col-span-6 md:mx-2 lg:mx-4 xl:mx-10 my-5">
               <label htmlFor="FirstName">
-                <span className="block text-blue-500 pb-2">First Name</span>
+                <span className="block text-blue-500 pb-2">Full Name</span>
               </label>
               <input
                 type="text"
-                name="FirstName"
-                value={formik.values.FirstName}
+                name="FullName"
+                value={formik.values.FullName}
                 onChange={formik.handleChange}
-                placeholder="first name"
+                placeholder="your name"
                 className="input input-lg bg-black w-full border border-gray-500 focus:border-gray-500 text-white"
                 required
               />
-              {renderFirstNameError}
+              {renderFullNameError}
             </div>
             <div className="col-span-12 md:col-span-6 md:mx-2 lg:mx-4 xl:mx-10 my-5">
-              <label htmlFor="LastName">
-                <span className="block text-blue-500 pb-2">Last Name</span>
+              <label htmlFor="SubTitle">
+                <span className="block text-blue-500 pb-2">Sub Title</span>
               </label>
               <input
                 type="text"
-                name="LastName"
-                value={formik.values.LastName}
+                name="SubTitle"
+                value={formik.values.SubTitle}
                 onChange={formik.handleChange}
-                placeholder="last name"
+                placeholder="sub title"
                 className="input input-lg bg-black w-full border border-gray-500 focus:border-gray-500 text-white"
                 required
               />
-              {renderLastNameError}
+              {renderSubTitleError}
             </div>
-            {/* <div className="col-span-12 mx-10 my-5">
-              <label htmlFor="Email">
-                <span className="block text-blue-500 pb-2">Your Email</span>
-              </label>
-              <input
-                type="email"
-                name="Email"
-                value={formik.values.Email}
-                onChange={formik.handleChange}
-                placeholder="enter email"
-                className="input input-lg bg-black w-full border border-gray-500 focus:border-gray-500 text-white"
-                required
-              />
-              {renderEmailError}
-            </div> */}
             <div className="col-span-12 md:col-span-6 md:mx-2 lg:mx-4 xl:mx-10 my-5">
               <label htmlFor="file">
                 <span className="block text-blue-500 pb-2">
@@ -201,7 +184,8 @@ const Registration = () => {
                 name="Occupation"
                 value={formik.values.Occupation}
                 onChange={formik.handleChange}
-                className="select select-bordered w-full max-w-xs">
+                className="select select-bordered w-full max-w-xs"
+              >
                 {jobs.map((item, i) => (
                   <option value={item} key={i}>
                     {item}
@@ -221,7 +205,8 @@ const Registration = () => {
                 onChange={formik.handleChange}
                 className="textarea bg-black w-full border border-gray-500 focus:border-gray-500 text-white text-lg"
                 placeholder="start typing here ..."
-                rows="5"></textarea>
+                rows="5"
+              ></textarea>
               {renderAboutError}
             </div>
             <div className="col-span-12 md:col-span-6 md:mx-2 lg:mx-2 xl:mx-10 my-5">
@@ -260,7 +245,8 @@ const Registration = () => {
             <div className="col-span-12 mx-auto my-10">
               <button
                 type="submit"
-                className="btn btn-lg btn-secondary px-10 sm:px-[100px] md:px-48 2xl:px-80 text-2xl">
+                className="btn btn-lg btn-secondary px-10 sm:px-[100px] md:px-48 2xl:px-80 text-2xl"
+              >
                 Create Account
               </button>
             </div>

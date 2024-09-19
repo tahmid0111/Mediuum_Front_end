@@ -10,7 +10,7 @@ const Logo = () => {
   }, []);
   return (
     <>
-      <Link to={getEmail() ? `/blogByCategory/64f875ed502e1b80556da101` : "/"}>
+      <Link to={getEmail() ? `/blogByCategory/66ea642a155631a10f87a018` : "/"}>
         <div className="logo-section flex items-center">
           <img src="/medium-logo.png" alt="logo" className="w-[40px] sm:w-[17%]" />
           <h1

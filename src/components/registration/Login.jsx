@@ -34,7 +34,7 @@ const Login = () => {
         setEmailHelper(values.Email);
         resetForm({ values: "" });
         fetchData()
-        navigate("/blogByCategory/64f875ed502e1b80556da101");
+        navigate("/blogByCategory/66ea642a155631a10f87a018");
         setIsLoading(false);
 
       } else if (res.status === "incorrectPassword") {

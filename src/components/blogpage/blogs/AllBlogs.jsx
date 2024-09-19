@@ -9,6 +9,7 @@ const AllBlogs = ({ categoryID }) => {
     let res = await getData(
       `http://localhost:8080/blog/api/v1/readBlogByCategory/${categoryID}`
     );
+    console.log(res.data)
     setItems(res.data);
   };
 

@@ -2,12 +2,12 @@ import React from "react";
 import { BsPencilFill } from "react-icons/bs";
 
 const MyProfile = (props) => {
-  const { FirstName, LastName, Email, Occupation, About } = props.items;
+  const { FullName, SubTitle, Email, Occupation, About } = props.items;
   return (
     <div>
       <div className="flex">
         <h1 className="text-4xl font-bold pb-2">
-          {FirstName} {LastName}
+          {FullName}
         </h1>
         <button className="ml-auto mr-10 btn bg-transparent">
           <BsPencilFill className="text-lg" />
@@ -15,7 +15,7 @@ const MyProfile = (props) => {
       </div>
 
       <p className="text-lg pb-2 border-b-2 border-blue-400">
-        Software Engineer | Working on Javascript and React
+        {SubTitle}
       </p>
       <div className="profile-content pt-5">
         <div className="flex font-semibold">

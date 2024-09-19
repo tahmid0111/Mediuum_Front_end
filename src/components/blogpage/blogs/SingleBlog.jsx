@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 
 const SingleBlog = ({ items }) => {
+  console.log(items);
   // const [color, setColor] = useState(false);
   const navigate = useNavigate();
   const handleLibrary = async (blogID) => {
@@ -31,11 +32,11 @@ const SingleBlog = ({ items }) => {
             <Toaster />
             <div className="flex">
               <div className="avatar">
-                <div className="w-4 h-4 rounded-full mr-2">
-                  <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                <div className="w-5 h-5 rounded-full mr-2">
+                  <img src={item.UserData.Image} />
                 </div>
               </div>
-              <span className="text-sm">john doe</span>
+              <span className="text-sm">{item.UserData.FullName}</span>
             </div>
             <h1 className="blog-title text-2xl font-bold pb-4">{item.Title}</h1>
             <div className="flex">
@@ -59,10 +60,7 @@ const SingleBlog = ({ items }) => {
                   )}
                 </button>
               </div> */}
-              <div
-                className="tooltip flex"
-                data-tip="add to library"
-              >
+              <div className="tooltip flex" data-tip="add to library">
                 <motion.button
                   whileTap={{ scale: 0.1 }}
                   onClick={() => handleLibrary(item._id)}
@@ -73,12 +71,12 @@ const SingleBlog = ({ items }) => {
               <p className="text-sm ml-auto">August 13</p>
             </div>
           </div>
-          <div className="col-span-4 content-end">
-            <img
-              src="/public/ai-generated-8846756_1920.jpg"
-              alt=""
-              className="w-48 float-right"
-            />
+          <div className="col-span-4">
+            <div className="avatar float-right">
+              <div className="w-[200px] h-[120px] rounded-md">
+                <img src={item.Image} />
+              </div>
+            </div>
           </div>
         </div>
       ))}

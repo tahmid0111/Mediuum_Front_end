@@ -13,7 +13,7 @@ const BlogByCategory = () => {
         <div className="col-span-8 mx-16">
           <AllBlogs categoryID={categoryID} />
         </div>
-        <div className="col-span-4 mr-12">
+        <div className="col-span-4 mr-10">
           <Trending />
           <TopicsByCategory categoryID={categoryID} />
           <TopWriters categoryID={categoryID} />

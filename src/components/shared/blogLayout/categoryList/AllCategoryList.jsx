@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { getData } from "../../../../api/common/getData";
 
 const AllCategoryList = () => {
@@ -9,7 +9,7 @@ const AllCategoryList = () => {
     let res = await getData(
       "http://localhost:8080/blog/api/v1/readAllCategory"
     );
-    console.log(res.data)
+    console.log(res.data);
     setItems(res.data);
   };
 
@@ -18,14 +18,19 @@ const AllCategoryList = () => {
   }, []);
 
   return (
-    <div className="mx-10 py-5 grid grid-cols-12">
+    <div className="mx-10 mb-2 py-4 grid grid-cols-12 border-b-2 border-b-red-200">
       <div className="col-span-12 mx-auto">
         <ul className="flex">
           {items.map((item, i) => (
             <li key={i} className="px-4 font-bold">
-              <Link to={`/blogByCategory/${item._id}`}>
+              <NavLink
+                to={`/blogByCategory/${item._id}`}
+                className={({ isActive }) =>
+                  isActive ? "border-b-2 border-b-red-500 pb-4" : ""
+                }
+              >
                 {item.CategoryName}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>

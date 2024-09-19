@@ -69,15 +69,15 @@ const SendEmailRequest = () => {
     return (
       <div className="h-screen bg-black">
         <Toaster />
-        <div className=" text-center grid grid-cols-12">
-          <div className="col-span-12 mx-auto my-10 h-[150px]">
-            <div className="bg-blue-500 px-24 md:px-36 py-10 rounded-xl">
-              <FaEnvelope className="text-white text-6xl md:text-8xl 2xl:text-9xl" />
+        <div className="text-center grid grid-cols-12">
+          <div className="col-span-12 mx-auto mt-10 sm:my-10 h-[150px]">
+            <div className="bg-blue-500 px-24 sm:px-36 py-10 rounded-xl">
+              <FaEnvelope className="text-white text-5xl xxs:text-6xl sm:text-8xl 2xl:text-9xl" />
             </div>
           </div>
           <div className="col-span-12 py-5 2xl:py-20">
             <motion.p
-              className="text-4xl 2xl:text-4xl text-white font-bold px-5"
+              className="text-3xl sm:text-4xl 2xl:text-4xl text-white font-bold px-5"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 2 }}>
@@ -89,7 +89,7 @@ const SendEmailRequest = () => {
               <div>
                 <br />
                 <input
-                  className="input input-bordered input-secondary w-72 md:w-96 2xl:w-[500px] bg-gray-500 text-xl text-white my-10 py-7"
+                  className="input input-md sm:input-lg input-bordered input-secondary w-72 sm:w-96 2xl:w-[500px] bg-gray-500 text-white my-5 xxm:my-10"
                   type="email"
                   name="email"
                   placeholder="enter email"
@@ -100,7 +100,7 @@ const SendEmailRequest = () => {
               <div>
                 <button
                   type="submit"
-                  className="btn btn-primary w-72 md:w-96 2xl:w-[500px] text-xl font-bold">
+                  className="btn btn-primary w-72 sm:w-96 2xl:w-[500px] text-sm sm:text-xl font-bold mb-10">
                   Get OTP Code
                 </button>
               </div>

@@ -18,7 +18,7 @@ const BlogMenu = () => {
     fetchData();
   }, []);
   return (
-    <div className="col-span-8">
+    <>
       <div className="menu-area mt-4 float-right">
         <ul className="flex">
           <li className="px-5">
@@ -53,7 +53,7 @@ const BlogMenu = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </>
   );
 };
 
