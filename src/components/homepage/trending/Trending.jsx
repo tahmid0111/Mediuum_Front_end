@@ -7,9 +7,8 @@ const Trending = () => {
   const [items, setItems] = useState([]);
 
   const fetchData = async () => {
-    let url = `${blogURL}/readBlogByCategory/66ea6443155631a10f87a0f7`;
+    let url = `${blogURL}/readAllBlog`;
     const res = await getData(url);
-    console.log(res.data)
     setItems(res.data);
   };
 

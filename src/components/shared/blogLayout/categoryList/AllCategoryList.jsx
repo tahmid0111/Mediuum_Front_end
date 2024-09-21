@@ -9,7 +9,6 @@ const AllCategoryList = () => {
     let res = await getData(
       "http://localhost:8080/blog/api/v1/readAllCategory"
     );
-    console.log(res.data);
     setItems(res.data);
   };
 

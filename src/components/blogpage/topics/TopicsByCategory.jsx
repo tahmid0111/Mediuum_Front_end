@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getData } from "../../../api/common/getData";
+import { Link } from "react-router-dom";
 
 const TopicsByCategory = ({ categoryID }) => {
   const [items, setItems] = useState([]);
@@ -24,12 +25,11 @@ const TopicsByCategory = ({ categoryID }) => {
       </div>
       <div className="flex flex-wrap">
         {items.map((item) => (
-          <div
-            key={item._id}
-            className="border-2 rounded-full px-5 py-1 m-1 bg-green-100"
-          >
-            {item.TopicName}
-          </div>
+          <Link to={`/singleTopic/${item._id}`} key={item._id}>
+            <div className="border-2 rounded-full px-5 py-1 m-1 bg-green-100">
+              {item.TopicName}
+            </div>
+          </Link>
         ))}
       </div>
     </div>
