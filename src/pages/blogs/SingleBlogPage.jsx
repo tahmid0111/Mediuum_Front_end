@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ProfilePageLayout from "../../layout/ProfilePageLayout";
 import { useParams } from "react-router-dom";
-import { getData } from "../../api/common/getData";
+import { getData } from "../../api/fetch.api";
 import SingleBlog from "../../components/blogpage/singleBlogPage/SingleBlog";
+
+
 
 const SingleBlogPage = () => {
   const { blogID } = useParams();

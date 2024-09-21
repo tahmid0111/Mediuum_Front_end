@@ -1,6 +1,6 @@
 import React from "react";
-import BlogHeader from "../components/shared/blogLayout/blogHeader/BlogHeader";
-import AllCategoryList from "../components/shared/blogLayout/categoryList/AllCategoryList";
+import BlogHeader from "../components/shared/blogLayout/BlogHeader";
+import AllCategoryList from "../components/shared/blogLayout/AllCategoryList";
 
 const BlogPageLayout = (props) => {
   return (

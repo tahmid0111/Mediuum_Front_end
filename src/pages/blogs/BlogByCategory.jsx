@@ -1,7 +1,8 @@
-import AllBlogs from "../../components/blogpage/blogs/AllBlogs";
-import TopicsByCategory from "../../components/blogpage/topics/TopicsByCategory";
-import TopWriters from "../../components/blogpage/topWriter/TopWriters";
-import Trending from "../../components/blogpage/trending/Trending";
+
+import AllBlogs from "../../components/blogpage/blogByCategory/blogs/AllBlogs";
+import TopicsByCategory from "../../components/blogpage/blogByCategory/topics/TopicsByCategory";
+import TopWriters from "../../components/blogpage/blogByCategory/topWriter/TopWriters";
+import Trending from "../../components/blogpage/blogByCategory/trending/Trending";
 import BlogPageLayout from "../../layout/BlogPageLayout";
 import { useParams } from "react-router-dom";
 

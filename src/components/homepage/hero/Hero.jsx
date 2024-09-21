@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { getEmail } from "../../../helper/otp/otp.helper";
+import { getEmail } from "../../../utility/otp.helper";
 import HeroTitle from "./HeroTitle";
 
 const Hero = () => {

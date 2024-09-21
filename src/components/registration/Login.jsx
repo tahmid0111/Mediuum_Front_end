@@ -1,24 +1,14 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
-import { LoginApi } from "../../api/registration/registration.api";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { InfinitySpin } from "react-loader-spinner";
-import { setEmailHelper, setTokenHelper } from "../../helper/otp/otp.helper";
-import { getData } from "../../api/common/getData";
-// redux
-import { useDispatch } from "react-redux";
-import { addData } from "../../redux/slice/profile/profileSlice";
+import { setEmailHelper } from "../../utility/otp.helper";
+import { LoginApi } from "../../api/registration.api";
 
 const Login = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-
-  const dispatch = useDispatch();
-  const fetchData = async () => {
-    let res = await getData(`http://localhost:8080/user/api/v1/readUserProfile`);
-    dispatch(addData(res.data))
-  }
 
   const formik = useFormik({
     initialValues: {
@@ -33,10 +23,8 @@ const Login = () => {
       if (res.status === "success") {
         setEmailHelper(values.Email);
         resetForm({ values: "" });
-        fetchData()
         navigate("/blogByCategory/66ea642a155631a10f87a018");
         setIsLoading(false);
-
       } else if (res.status === "incorrectPassword") {
         setIsLoading(false);
         setTimeout(() => {
@@ -63,11 +51,15 @@ const Login = () => {
       <Toaster />
       <div className="card col-span-12 xs:mx-2 xxs:mx-5 xxm:mx-auto xxm:w-2/3 sm:w-[450px] md:w-[500px] 2xl:w-6/12 xxm:h-[450px] sm:h-[500px] mx-auto bg-white shadow-2xl shadow-blue-500/20">
         <div className="card-body xs:px-3 xxm:px-5 sm:p-8">
-          <h2 className="text-center text-2xl sm:text-4xl font-medium xs:mb-2 sm:mb-4">Login</h2>
+          <h2 className="text-center text-2xl sm:text-4xl font-medium xs:mb-2 sm:mb-4">
+            Login
+          </h2>
           <form onSubmit={formik.handleSubmit}>
             <div className="form-control xs:mb-2 sm:mb-4">
               <label className="label" htmlFor="username">
-                <span className="text-base sm:text-xl font-bold text-blue-500">Email</span>
+                <span className="text-base sm:text-xl font-bold text-blue-500">
+                  Email
+                </span>
               </label>
               <input
                 type="email"

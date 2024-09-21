@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ProfilePageLayout from "../../layout/ProfilePageLayout";
-import { getData } from "../../api/common/getData";
+import { getData } from "../../api/fetch.api";
+import RelatedTopics from "../../components/blogpage/singleTopicPage/RelatedTopics";
+import MyTopic from "../../components/blogpage/singleTopicPage/MyTopic";
 
 const SingleTopicPage = () => {
   const { topicID } = useParams();
@@ -19,8 +21,8 @@ const SingleTopicPage = () => {
   }, [topicID]);
   return (
     <ProfilePageLayout>
-      
-      <h1>{item && item.TopicName}</h1>
+      <RelatedTopics CategoryID={item.CategoryID} />
+      <MyTopic item={item} />
     </ProfilePageLayout>
   );
 };

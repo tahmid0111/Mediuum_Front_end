@@ -1,15 +1,11 @@
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-
-import { SendEmail } from "../../api/otp/otp.api";
-
+import { useNavigate, useParams } from "react-router-dom"
 import { FaEnvelope } from "react-icons/fa6";
-
 import Swal from "sweetalert2";
 import toast, { Toaster } from "react-hot-toast";
 import { Comment } from "react-loader-spinner";
 import { motion } from "framer-motion";
-import { setEmailHelper } from "../../helper/otp/otp.helper";
+import { setEmailHelper } from "../../utility/otp.helper";
 
 const SendEmailRequest = () => {
   const navigate = useNavigate();

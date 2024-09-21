@@ -1,5 +1,5 @@
 import React from "react";
-import { guideData, headingContent } from "../../helper/data/guideData";
+import { guideData, headingContent } from "../../utility/dummyData";
 import HomePageLayout from "../../layout/HomePageLayout";
 
 const Guide = () => {

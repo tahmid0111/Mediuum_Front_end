@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ProfilePageLayout from "../../layout/ProfilePageLayout";
-import WriterMenu from "../../components/writerProfile/WriterMenu";
-import WriterInfo from "../../components/writerProfile/writerInfo/WriterInfo";
-import { writerURL } from "../../helper/URL/URLHelper";
-import { getData } from "../../api/common/getData";
+import { writerURL } from "../../utility/url.helper";
+import { getData } from "../../api/fetch.api";
+import WriterMenu from "../../components/profilepage/writer/menu/WriterMenu";
+import WriterInfo from "../../components/profilepage/writer/info/WriterInfo";
 
 const WriterProfilePage = () => {
   const [items, setItems] = useState({});

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { getData } from "../../../api/common/getData";
-import { blogURL } from "../../../helper/URL/URLHelper";
+import { getData } from "../../../api/fetch.api";
+import { blogURL } from "../../../utility/url.helper";
 import SingleTrending from "./SingleTrending";
 
 const Trending = () => {

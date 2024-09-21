@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import * as yup from "yup";
 import { useFormik } from "formik";
-import { Register } from "../../api/registration/registration.api";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { InfinitySpin } from "react-loader-spinner";
-import { getEmail } from "../../helper/otp/otp.helper";
+import { getEmail } from "../../utility/otp.helper";
+import { Register } from "../../api/registration.api";
 
 const jobs = [
   "Software Engineer",

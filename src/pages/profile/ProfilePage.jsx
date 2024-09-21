@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { getData } from "../../api/common/getData";
+import { getData } from "../../api/fetch.api";
 import ProfilePageLayout from "../../layout/ProfilePageLayout";
-import ProfileMenu from "../../components/profilepage/menu/ProfileMenu";
-import ProfileInfo from "../../components/profilepage/info/ProfileInfo";
+import ProfileMenu from "../../components/profilepage/user/menu/ProfileMenu";
+import ProfileInfo from "../../components/profilepage/user/info/ProfileInfo";
 
 const ProfilePage = () => {
   const [items, setItems] = useState({});

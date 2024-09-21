@@ -1,5 +1,5 @@
 import React from "react";
-import { faqData } from "../../helper/data/guideData";
+import { faqData } from "../../utility/dummyData";
 import HomePageLayout from "../../layout/HomePageLayout";
 
 const Faq = () => {
