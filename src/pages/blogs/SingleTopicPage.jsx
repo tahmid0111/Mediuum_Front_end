@@ -4,6 +4,7 @@ import ProfilePageLayout from "../../layout/ProfilePageLayout";
 import { getData } from "../../api/fetch.api";
 import RelatedTopics from "../../components/blogpage/singleTopicPage/RelatedTopics";
 import MyTopic from "../../components/blogpage/singleTopicPage/MyTopic";
+import AllBlogs from "../../components/blogpage/singleTopicPage/AllBlogs";
 
 const SingleTopicPage = () => {
   const { topicID } = useParams();
@@ -21,8 +22,17 @@ const SingleTopicPage = () => {
   }, [topicID]);
   return (
     <ProfilePageLayout>
-      <RelatedTopics CategoryID={item.CategoryID} />
-      <MyTopic item={item} />
+      <div className="grid grid-cols-12 mx-20">
+        <div className="col-span-12 mx-auto my-10">
+          <RelatedTopics categoryID={item.CategoryID} topicID={item._id} />
+        </div>
+        <div className="col-span-12 mx-auto">
+          <MyTopic item={item} />
+        </div>
+        <div className="col-span-12 mx-20 mt-36 mb-20">
+          <AllBlogs topicID={item._id} />
+        </div>
+      </div>
     </ProfilePageLayout>
   );
 };

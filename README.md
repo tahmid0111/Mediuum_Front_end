@@ -8,6 +8,8 @@
 
 # _Features_ ⬇️
 
+- ### You can create an account and read articles about your favourate topics and also can post articles.
+
 - ### The project follows a clear and organized folder structure to maintain code readability and scalability.
 
 - ### I am working with five user roles:
